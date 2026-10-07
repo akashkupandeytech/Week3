@@ -6,8 +6,12 @@ const User = require("./models/User");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const authMiddleware = require("./middleware/authMiddleware");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
